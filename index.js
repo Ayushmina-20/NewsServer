@@ -65,6 +65,7 @@ async function api_call() {
     const response = await axios.get(URL1);
     let result = await response;
     result = result.data.articles;
+    console.log(result);
     result.map(async (r, idx) => {
       let data = new User({
         entity_type_id: r.source.id,

@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "client/build")));
 const User = require("./model/userSchema");
 const Category = require("./model/catSchema");
+const NewUser = require("./model/newuserSchema");
 const DB =
   "mongodb+srv://Ayushmina:News@cluster0.oskav.mongodb.net/News_data?retryWrites=true&w=majority";
 mongoose

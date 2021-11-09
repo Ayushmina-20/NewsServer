@@ -296,6 +296,15 @@ app.post("/all", async (req, res) => {
   console.log(user);
   res.send(user);
 });
+app.get("/home", async (req, res) => {
+  console.log("hello home");
+  const news = await axios.get(
+    "https://newsapi.org/v2/top-headlines?country=us&apiKey=825a0c3207b24416b15fe1e1d1e34eb9&pageSize=40"
+  );
+  let newsdata = await news;
+  newsdata = newsdata.data.articles;
+  if (newsdata) res.send(newsdata);
+});
 
 app.post("/savedata", async (req, res) => {
   let users = req.body.Users;

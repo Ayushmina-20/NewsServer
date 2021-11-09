@@ -305,7 +305,12 @@ app.get("/home", async (req, res) => {
   newsdata = newsdata.data.articles;
   if (newsdata) res.send(newsdata);
 });
-
+app.get("/allnew", async (req, res) => {
+  console.log("hello all new");
+  const user = await NewUser.find();
+  console.log(user);
+  res.send(user);
+});
 app.post("/savedata", async (req, res) => {
   let users = req.body.Users;
   console.log(users);

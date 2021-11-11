@@ -291,8 +291,8 @@ app.get("/", (req, res) => {
 
 app.post("/all", async (req, res) => {
   console.log("hello Doctor2");
-  const user = await User.find({ dictionary_token: req.body.myParam }).sort({
-    created_on: 1,
+  const user = await CategoryUser.find({
+    dictionary_token: req.body.myParam,
   });
   console.log(user);
   res.send(user);
@@ -333,5 +333,5 @@ app.post("/savedata", async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
-  api_call();
+  // api_call();
 });

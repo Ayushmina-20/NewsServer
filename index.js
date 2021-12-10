@@ -298,6 +298,12 @@ app.post("/all", async (req, res) => {
   console.log(user);
   res.send(user);
 });
+app.get("/newslist", async (req, res) => {
+  console.log("hello Doctor2");
+  const user = await CategoryUser.find();
+  console.log(user);
+  res.send(user);
+});
 app.get("/home", async (req, res) => {
   console.log("hello home");
   const news = await axios.get(
